@@ -1,9 +1,9 @@
 {
-    "name": "frostealth/yii2-aws-s3",
+    "name": "chemezov/yii2-yandex-cloud",
     "type": "yii2-extension",
-    "description": "An Amazon S3 component for Yii2",
-    "keywords": ["yii2", "aws", "s3", "aws-s3", "yii2-aws", "yii2-s3"],
-    "homepage": "https://github.com/frostealth/yii2-aws-s3",
+    "description": "An Yandex Cloud component for Yii2",
+    "keywords": ["yii2", "aws", "s3", "aws-s3", "yii2-aws", "yii2-s3", "yandex", "cloud", "bucket"],
+    "homepage": "https://github.com/chemezov/yii2-yandex-cloud",
     "license": "MIT",
     "authors": [
         {
@@ -30,7 +30,7 @@
     },
     "autoload": {
         "psr-4": {
-            "frostealth\\yii2\\aws\\s3\\": "src/"
+            "chemezov\\yii2\\yandex\\cloud\\": "src/"
         }
     }
 }

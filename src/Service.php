@@ -1,11 +1,11 @@
 <?php
 
-namespace frostealth\yii2\aws\s3;
+namespace chemezov\yii2\yandex\cloud;
 
 use Aws\ResultInterface;
-use frostealth\yii2\aws\s3\interfaces\commands\Command;
-use frostealth\yii2\aws\s3\interfaces\HandlerResolver;
-use frostealth\yii2\aws\s3\interfaces\Service as ServiceInterface;
+use chemezov\yii2\yandex\cloud\interfaces\commands\Command;
+use chemezov\yii2\yandex\cloud\interfaces\HandlerResolver;
+use chemezov\yii2\yandex\cloud\interfaces\Service as ServiceInterface;
 use yii\base\Component;
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
@@ -25,7 +25,7 @@ use yii\helpers\ArrayHelper;
  * @method string           getUrl(string $filename)
  * @method string           getPresignedUrl(string $filename, $expires)
  *
- * @package frostealth\yii2\aws\s3
+ * @package chemezov\yii2\yandex\cloud
  */
 class Service extends Component implements ServiceInterface
 {
@@ -36,7 +36,7 @@ class Service extends Component implements ServiceInterface
     public $defaultAcl = '';
 
     /** @var array S3Client config */
-    protected $clientConfig = ['version' => '2006-03-01'];
+    protected $clientConfig = ['version' => '2006-03-01', 'region' => 'us-east-1', 'endpoint' => 'https://storage.yandexcloud.net'];
 
     /** @var array */
     private $components = [];
@@ -70,7 +70,7 @@ class Service extends Component implements ServiceInterface
     /**
      * Executes a command.
      *
-     * @param \frostealth\yii2\aws\s3\interfaces\commands\Command $command
+     * @param \chemezov\yii2\yandex\cloud\interfaces\commands\Command $command
      *
      * @return mixed
      */
@@ -84,7 +84,7 @@ class Service extends Component implements ServiceInterface
      *
      * @param string $commandClass
      *
-     * @return \frostealth\yii2\aws\s3\interfaces\commands\Command
+     * @return \chemezov\yii2\yandex\cloud\interfaces\commands\Command
      */
     public function create(string $commandClass): Command
     {
@@ -94,7 +94,7 @@ class Service extends Component implements ServiceInterface
     /**
      * Returns command factory.
      *
-     * @return \frostealth\yii2\aws\s3\CommandFactory
+     * @return \chemezov\yii2\yandex\cloud\CommandFactory
      */
     public function commands(): CommandFactory
     {
@@ -104,7 +104,7 @@ class Service extends Component implements ServiceInterface
     /**
      * Returns handler resolver.
      *
-     * @return \frostealth\yii2\aws\s3\interfaces\HandlerResolver
+     * @return \chemezov\yii2\yandex\cloud\interfaces\HandlerResolver
      */
     public function getResolver(): HandlerResolver
     {
@@ -241,10 +241,10 @@ class Service extends Component implements ServiceInterface
     {
         return [
             'client' => ['class' => 'Aws\S3\S3Client'],
-            'resolver' => ['class' => 'frostealth\yii2\aws\s3\HandlerResolver'],
-            'bus' => ['class' => 'frostealth\yii2\aws\s3\Bus'],
-            'builder' => ['class' => 'frostealth\yii2\aws\s3\CommandBuilder'],
-            'factory' => ['class' => 'frostealth\yii2\aws\s3\CommandFactory'],
+            'resolver' => ['class' => 'chemezov\yii2\yandex\cloud\HandlerResolver'],
+            'bus' => ['class' => 'chemezov\yii2\yandex\cloud\Bus'],
+            'builder' => ['class' => 'chemezov\yii2\yandex\cloud\CommandBuilder'],
+            'factory' => ['class' => 'chemezov\yii2\yandex\cloud\CommandFactory'],
         ];
     }
 

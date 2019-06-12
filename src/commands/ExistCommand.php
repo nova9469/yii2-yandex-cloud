@@ -1,17 +1,17 @@
 <?php
 
-namespace frostealth\yii2\aws\s3\commands;
+namespace chemezov\yii2\yandex\cloud\commands;
 
-use frostealth\yii2\aws\s3\base\commands\ExecutableCommand;
-use frostealth\yii2\aws\s3\base\commands\traits\Options;
-use frostealth\yii2\aws\s3\interfaces\commands\HasBucket;
+use chemezov\yii2\yandex\cloud\base\commands\ExecutableCommand;
+use chemezov\yii2\yandex\cloud\base\commands\traits\Options;
+use chemezov\yii2\yandex\cloud\interfaces\commands\HasBucket;
 
 /**
  * Class ExistCommand
  *
  * @method bool execute()
  *
- * @package frostealth\yii2\aws\s3\commands
+ * @package chemezov\yii2\yandex\cloud\commands
  */
 class ExistCommand extends ExecutableCommand implements HasBucket
 {

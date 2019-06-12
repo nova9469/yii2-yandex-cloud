@@ -1,19 +1,19 @@
 <?php
 
-namespace frostealth\yii2\aws\s3\handlers;
+namespace chemezov\yii2\yandex\cloud\handlers;
 
-use frostealth\yii2\aws\s3\base\handlers\Handler;
-use frostealth\yii2\aws\s3\commands\ExistCommand;
+use chemezov\yii2\yandex\cloud\base\handlers\Handler;
+use chemezov\yii2\yandex\cloud\commands\ExistCommand;
 
 /**
  * Class ExistCommandHandler
  *
- * @package frostealth\yii2\aws\s3\handlers
+ * @package chemezov\yii2\yandex\cloud\handlers
  */
 final class ExistCommandHandler extends Handler
 {
     /**
-     * @param \frostealth\yii2\aws\s3\commands\ExistCommand $command
+     * @param \chemezov\yii2\yandex\cloud\commands\ExistCommand $command
      *
      * @return bool
      */

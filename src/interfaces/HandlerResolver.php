@@ -1,21 +1,21 @@
 <?php
 
-namespace frostealth\yii2\aws\s3\interfaces;
+namespace chemezov\yii2\yandex\cloud\interfaces;
 
-use frostealth\yii2\aws\s3\interfaces\commands\Command;
-use frostealth\yii2\aws\s3\interfaces\handlers\Handler;
+use chemezov\yii2\yandex\cloud\interfaces\commands\Command;
+use chemezov\yii2\yandex\cloud\interfaces\handlers\Handler;
 
 /**
  * Interface HandlerResolver
  *
- * @package frostealth\yii2\aws\s3\interfaces
+ * @package chemezov\yii2\yandex\cloud\interfaces
  */
 interface HandlerResolver
 {
     /**
-     * @param \frostealth\yii2\aws\s3\interfaces\commands\Command $command
+     * @param \chemezov\yii2\yandex\cloud\interfaces\commands\Command $command
      *
-     * @return \frostealth\yii2\aws\s3\interfaces\handlers\Handler
+     * @return \chemezov\yii2\yandex\cloud\interfaces\handlers\Handler
      */
     public function resolve(Command $command): Handler;
 

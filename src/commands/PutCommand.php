@@ -1,15 +1,15 @@
 <?php
 
-namespace frostealth\yii2\aws\s3\commands;
+namespace chemezov\yii2\yandex\cloud\commands;
 
 use Aws\ResultInterface;
-use frostealth\yii2\aws\s3\base\commands\ExecutableCommand;
-use frostealth\yii2\aws\s3\base\commands\traits\Async;
-use frostealth\yii2\aws\s3\base\commands\traits\Options;
-use frostealth\yii2\aws\s3\interfaces\commands\Asynchronous;
-use frostealth\yii2\aws\s3\interfaces\commands\HasAcl;
-use frostealth\yii2\aws\s3\interfaces\commands\HasBucket;
-use frostealth\yii2\aws\s3\interfaces\commands\PlainCommand;
+use chemezov\yii2\yandex\cloud\base\commands\ExecutableCommand;
+use chemezov\yii2\yandex\cloud\base\commands\traits\Async;
+use chemezov\yii2\yandex\cloud\base\commands\traits\Options;
+use chemezov\yii2\yandex\cloud\interfaces\commands\Asynchronous;
+use chemezov\yii2\yandex\cloud\interfaces\commands\HasAcl;
+use chemezov\yii2\yandex\cloud\interfaces\commands\HasBucket;
+use chemezov\yii2\yandex\cloud\interfaces\commands\PlainCommand;
 use GuzzleHttp\Promise\PromiseInterface;
 
 /**
@@ -17,7 +17,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  *
  * @method ResultInterface|PromiseInterface execute()
  *
- * @package frostealth\yii2\aws\s3\commands
+ * @package chemezov\yii2\yandex\cloud\commands
  */
 class PutCommand extends ExecutableCommand implements PlainCommand, HasBucket, HasAcl, Asynchronous
 {

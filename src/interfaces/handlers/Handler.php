@@ -1,11 +1,11 @@
 <?php
 
-namespace frostealth\yii2\aws\s3\interfaces\handlers;
+namespace chemezov\yii2\yandex\cloud\interfaces\handlers;
 
 /**
  * Interface Handler
  *
- * @package frostealth\yii2\aws\s3\interfaces\handlers
+ * @package chemezov\yii2\yandex\cloud\interfaces\handlers
  */
 interface Handler
 {

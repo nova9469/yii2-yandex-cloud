@@ -1,19 +1,19 @@
 <?php
 
-namespace frostealth\yii2\aws\s3\handlers;
+namespace chemezov\yii2\yandex\cloud\handlers;
 
-use frostealth\yii2\aws\s3\base\handlers\Handler;
-use frostealth\yii2\aws\s3\commands\GetUrlCommand;
+use chemezov\yii2\yandex\cloud\base\handlers\Handler;
+use chemezov\yii2\yandex\cloud\commands\GetUrlCommand;
 
 /**
  * Class GetUrlCommandHandler
  *
- * @package frostealth\yii2\aws\s3\handlers
+ * @package chemezov\yii2\yandex\cloud\handlers
  */
 final class GetUrlCommandHandler extends Handler
 {
     /**
-     * @param \frostealth\yii2\aws\s3\commands\GetUrlCommand $command
+     * @param \chemezov\yii2\yandex\cloud\commands\GetUrlCommand $command
      *
      * @return string
      */

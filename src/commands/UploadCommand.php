@@ -1,13 +1,13 @@
 <?php
 
-namespace frostealth\yii2\aws\s3\commands;
+namespace chemezov\yii2\yandex\cloud\commands;
 
 use Aws\ResultInterface;
-use frostealth\yii2\aws\s3\base\commands\ExecutableCommand;
-use frostealth\yii2\aws\s3\base\commands\traits\Async;
-use frostealth\yii2\aws\s3\interfaces\commands\Asynchronous;
-use frostealth\yii2\aws\s3\interfaces\commands\HasAcl;
-use frostealth\yii2\aws\s3\interfaces\commands\HasBucket;
+use chemezov\yii2\yandex\cloud\base\commands\ExecutableCommand;
+use chemezov\yii2\yandex\cloud\base\commands\traits\Async;
+use chemezov\yii2\yandex\cloud\interfaces\commands\Asynchronous;
+use chemezov\yii2\yandex\cloud\interfaces\commands\HasAcl;
+use chemezov\yii2\yandex\cloud\interfaces\commands\HasBucket;
 use GuzzleHttp\Promise\PromiseInterface;
 
 /**
@@ -15,7 +15,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  *
  * @method ResultInterface|PromiseInterface execute()
  *
- * @package frostealth\yii2\aws\s3\commands
+ * @package chemezov\yii2\yandex\cloud\commands
  */
 class UploadCommand extends ExecutableCommand implements HasBucket, HasAcl, Asynchronous
 {

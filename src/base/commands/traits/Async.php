@@ -1,11 +1,11 @@
 <?php
 
-namespace frostealth\yii2\aws\s3\base\commands\traits;
+namespace chemezov\yii2\yandex\cloud\base\commands\traits;
 
 /**
  * Trait Async
  *
- * @package frostealth\yii2\aws\s3\base\commands\traits
+ * @package chemezov\yii2\yandex\cloud\base\commands\traits
  */
 trait Async
 {

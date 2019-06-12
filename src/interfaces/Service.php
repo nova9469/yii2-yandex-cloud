@@ -1,18 +1,18 @@
 <?php
 
-namespace frostealth\yii2\aws\s3\interfaces;
+namespace chemezov\yii2\yandex\cloud\interfaces;
 
-use frostealth\yii2\aws\s3\interfaces\commands\Command;
+use chemezov\yii2\yandex\cloud\interfaces\commands\Command;
 
 /**
  * Interface Service
  *
- * @package frostealth\yii2\aws\s3\interfaces
+ * @package chemezov\yii2\yandex\cloud\interfaces
  */
 interface Service
 {
     /**
-     * @param \frostealth\yii2\aws\s3\interfaces\commands\Command $command
+     * @param \chemezov\yii2\yandex\cloud\interfaces\commands\Command $command
      *
      * @return mixed
      */
@@ -21,7 +21,7 @@ interface Service
     /**
      * @param string $commandClass
      *
-     * @return \frostealth\yii2\aws\s3\interfaces\commands\Command
+     * @return \chemezov\yii2\yandex\cloud\interfaces\commands\Command
      */
     public function create(string $commandClass): Command;
 }

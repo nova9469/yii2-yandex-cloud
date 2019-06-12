@@ -1,11 +1,11 @@
 <?php
 
-namespace frostealth\yii2\aws\s3\interfaces\commands;
+namespace chemezov\yii2\yandex\cloud\interfaces\commands;
 
 /**
  * Interface Asynchronous
  *
- * @package frostealth\yii2\aws\s3\interfaces\commands
+ * @package chemezov\yii2\yandex\cloud\interfaces\commands
  */
 interface Asynchronous
 {

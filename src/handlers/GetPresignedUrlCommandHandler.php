@@ -1,19 +1,19 @@
 <?php
 
-namespace frostealth\yii2\aws\s3\handlers;
+namespace chemezov\yii2\yandex\cloud\handlers;
 
-use frostealth\yii2\aws\s3\base\handlers\Handler;
-use frostealth\yii2\aws\s3\commands\GetPresignedUrlCommand;
+use chemezov\yii2\yandex\cloud\base\handlers\Handler;
+use chemezov\yii2\yandex\cloud\commands\GetPresignedUrlCommand;
 
 /**
  * Class GetPresignedUrlCommandHandler
  *
- * @package frostealth\yii2\aws\s3\handlers
+ * @package chemezov\yii2\yandex\cloud\handlers
  */
 final class GetPresignedUrlCommandHandler extends Handler
 {
     /**
-     * @param \frostealth\yii2\aws\s3\commands\GetPresignedUrlCommand $command
+     * @param \chemezov\yii2\yandex\cloud\commands\GetPresignedUrlCommand $command
      *
      * @return string
      */

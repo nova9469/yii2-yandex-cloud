@@ -1,6 +1,6 @@
-# Yii2 AWS S3
+# Yii2 Yandex Cloud
 
-An Amazon S3 component for Yii2.
+An Yandex Cloud component for Yii2 (forked from [Amazon S3 Yii2 component](https://github.com/frostealth/yii2-aws-s3)).
 
 [![License](https://poser.pugx.org/frostealth/yii2-aws-s3/license)](https://github.com/frostealth/yii2-aws-s3/blob/2.x/LICENSE)
 [![Latest Stable Version](https://poser.pugx.org/frostealth/yii2-aws-s3/v/stable)](https://packagist.org/packages/frostealth/yii2-aws-s3)
@@ -16,7 +16,7 @@ An Amazon S3 component for Yii2.
 1. Run the [Composer](http://getcomposer.org/download/) command to install the latest version:
 
     ```bash
-    composer require frostealth/yii2-aws-s3 ~2.0
+    composer require chemezov/yii2-yandex-cloud
     ```
 
 2. Add the component to `config/main.php`
@@ -25,25 +25,27 @@ An Amazon S3 component for Yii2.
     'components' => [
         // ...
         's3' => [
-            'class' => 'frostealth\yii2\aws\s3\Service',
+            'class' => 'chemezov\yii2\yandex\cloud\Service',
             'credentials' => [ // Aws\Credentials\CredentialsInterface|array|callable
                 'key' => 'my-key',
                 'secret' => 'my-secret',
             ],
-            'region' => 'my-region',
             'defaultBucket' => 'my-bucket',
-            'defaultAcl' => 'public-read',
         ],
         // ...
     ],
     ```
+
+## Получить статические ключи доступа
+
+https://cloud.yandex.ru/docs/iam/operations/sa/create-access-key.
 
 ## Basic usage
 
 ### Usage of the command factory and additional params
 
 ```php
-/** @var \frostealth\yii2\aws\s3\Service $s3 */
+/** @var \chemezov\yii2\yandex\cloud\Service $s3 */
 $s3 = Yii::$app->get('s3');
 
 /** @var \Aws\ResultInterface $result */
@@ -72,7 +74,7 @@ $signedUrl = $s3->commands()->getPresignedUrl('filename.ext', '+2 days')->execut
 ### Short syntax
 
 ```php
-/** @var \frostealth\yii2\aws\s3\Service $s3 */
+/** @var \chemezov\yii2\yandex\cloud\Service $s3 */
 $s3 = Yii::$app->get('s3');
 
 /** @var \Aws\ResultInterface $result */
@@ -101,7 +103,7 @@ $signedUrl = $s3->getPresignedUrl('filename.ext', '+2 days');
 ### Asynchronous execution
 
 ```php
-/** @var \frostealth\yii2\aws\s3\Service $s3 */
+/** @var \chemezov\yii2\yandex\cloud\Service $s3 */
 $s3 = Yii::$app->get('s3');
 
 /** @var \GuzzleHttp\Promise\PromiseInterface $promise */
@@ -119,10 +121,10 @@ $promise = $s3->commands()->list('path/')->async()->execute();
 ## Advanced usage
 
 ```php
-/** @var \frostealth\yii2\aws\s3\interfaces\Service $s3 */
+/** @var \chemezov\yii2\yandex\cloud\interfaces\Service $s3 */
 $s3 = Yii::$app->get('s3');
 
-/** @var \frostealth\yii2\aws\s3\commands\GetCommand $command */
+/** @var \chemezov\yii2\yandex\cloud\commands\GetCommand $command */
 $command = $s3->create(GetCommand::class);
 $command->inBucket('my-another-bucket')->byFilename('filename.ext')->saveAs('/path/to/local/file.ext');
 
@@ -158,9 +160,9 @@ Consider the following command:
 
 namespace app\components\s3\commands;
 
-use frostealth\yii2\aws\s3\base\commands\traits\Options;
-use frostealth\yii2\aws\s3\interfaces\commands\Command;
-use frostealth\yii2\aws\s3\interfaces\commands\HasBucket;
+use chemezov\yii2\yandex\cloud\base\commands\traits\Options;
+use chemezov\yii2\yandex\cloud\interfaces\commands\Command;
+use chemezov\yii2\yandex\cloud\interfaces\commands\HasBucket;
 
 class MyCommand implements Command, HasBucket
 {
@@ -204,7 +206,7 @@ The handler for this command looks like this:
 namespace app\components\s3\handlers;
 
 use app\components\s3\commands\MyCommand;
-use frostealth\yii2\aws\s3\base\handlers\Handler;
+use chemezov\yii2\yandex\cloud\base\handlers\Handler;
 
 class MyCommandHandler extends Handler
 {
@@ -222,7 +224,7 @@ class MyCommandHandler extends Handler
 And usage this command:
 
 ```php
-/** @var \frostealth\yii2\aws\s3\interfaces\Service */
+/** @var \chemezov\yii2\yandex\cloud\interfaces\Service */
 $s3 = Yii::$app->get('s3');
 
 /** @var \app\components\s3\commands\MyCommand $command */
@@ -240,8 +242,8 @@ Custom plain command looks like this:
 
 namespace app\components\s3\commands;
 
-use frostealth\yii2\aws\s3\interfaces\commands\HasBucket;
-use frostealth\yii2\aws\s3\interfaces\commands\PlainCommand;
+use chemezov\yii2\yandex\cloud\interfaces\commands\HasBucket;
+use chemezov\yii2\yandex\cloud\interfaces\commands\PlainCommand;
 
 class MyPlainCommand implements PlainCommand, HasBucket
 {
