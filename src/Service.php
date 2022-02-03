@@ -36,7 +36,7 @@ class Service extends Component implements ServiceInterface
     public $defaultAcl = '';
 
     /** @var array S3Client config */
-    protected $clientConfig = ['version' => '2006-03-01', 'region' => 'us-east-1', 'endpoint' => 'https://storage.yandexcloud.net'];
+    protected $clientConfig = ['version' => '2006-03-01', 'region' => 'us-east-1', 'endpoint' => 'https://storage.yandexcloud.net', 'timeout' => 1200];
 
     /** @var array */
     private $components = [];
