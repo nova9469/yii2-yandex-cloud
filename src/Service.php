@@ -40,7 +40,7 @@ class Service extends Component implements ServiceInterface
         'version' => '2006-03-01',
         'region' => 'us-east-1',
         'endpoint' => 'https://storage.yandexcloud.net',
-        'timeout' => 1200
+        'select_timeout' => 1200
     ];
 
     /** @var array */

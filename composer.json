@@ -6,7 +6,6 @@
     "homepage": "https://github.com/chemezov/yii2-yandex-cloud",
     "license": "MIT",
     "minimum-stability": "dev",
-    "prefer-stable": true,
     "authors": [
         {
             "name": "Ivan Kudinov",
