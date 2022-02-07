@@ -35,12 +35,14 @@ class Service extends Component implements ServiceInterface
     /** @var string */
     public $defaultAcl = '';
 
+    /** @var string */
+    public $region = '';
+
     /** @var array S3Client config */
     protected $clientConfig = [
         'version' => '2006-03-01',
-        'region' => 'us-east-1',
+        'region' => '',
         'endpoint' => 'https://storage.yandexcloud.net',
-        'select_timeout' => 1200
     ];
 
     /** @var array */
@@ -55,6 +57,8 @@ class Service extends Component implements ServiceInterface
      */
     public function init()
     {
+        if(isset($this->region) && $this->region) $this->clientConfig['region'] = $this->region;
+
         if (empty($this->clientConfig['credentials'])) {
             throw new InvalidConfigException('Credentials are not set.');
         }
